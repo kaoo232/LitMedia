@@ -1,0 +1,53 @@
+name: flutter_backend_1
+description: "A new Flutter project."
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  firebase_core: ^3.12.1
+  provider: ^6.1.2
+  async: ^2.12.0
+  fake_async: ^1.3.2
+  material_symbols_icons: ^4.2811.0
+  leak_tracker: ^10.0.8
+  material_color_utilities: ^0.11.1
+  firebase_auth: ^5.5.1
+  cloud_firestore: ^5.6.5
+  google_sign_in: ^6.3.0
+  flutter_facebook_auth: ^7.1.1
+  flutter_libphonenumber: ^2.5.1
+  intl_phone_number_input: ^0.7.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/logo.png
+    - images/facebook.png
+    - images/google.png
+    - images/telephone.png
+    - images/textlogo.png
+
+  fonts:
+    - family: RocknRollOne
+      fonts:
+        - asset: fonts/RocknRoll_One/font1.ttf
+
+    - family: RozhaOne
+      fonts:
+        - asset: fonts/Rozha_One/RozhaOne.ttf
