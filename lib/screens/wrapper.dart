@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_backend_1/screens/Home/home_screen.dart';
 import 'package:flutter_backend_1/screens/model/user.dart';
-import 'package:flutter_backend_1/screens/pages/checkscreen.dart';
+import 'package:flutter_backend_1/screens/pages/authPages/checkscreen.dart';
 import 'package:provider/provider.dart';
 
 class wrapper extends StatelessWidget {
@@ -18,7 +18,7 @@ class wrapper extends StatelessWidget {
     if (user == null) {
       return Checkscreen();
     } else {
-      return Home();
+      return Homepage();
     }
   }
 }

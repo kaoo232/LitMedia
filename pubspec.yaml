@@ -26,7 +26,18 @@ dependencies:
   flutter_facebook_auth: ^7.1.1
   flutter_libphonenumber: ^2.5.1
   intl_phone_number_input: ^0.7.4
-
+  flutter_screenutil: ^5.0.0
+  flutter_spinkit: ^5.2.1
+  multi_select_flutter: ^4.0.0
+  dropdown_button2: ^2.3.9
+  image_picker: ^1.1.2
+  intl: ^0.20.2
+  rich_typewriter: ^1.1.0
+  zo_animated_border: ^0.0.6
+  file_picker: ^10.1.2
+  random_string: ^2.3.1
+  fluttertoast: ^8.2.12
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -42,6 +53,10 @@ flutter:
     - images/google.png
     - images/telephone.png
     - images/textlogo.png
+    - images/welcome.png
+    - images/discover.png
+    - images/habit.png
+    - images/connect.png
 
   fonts:
     - family: RocknRollOne
@@ -51,3 +66,17 @@ flutter:
     - family: RozhaOne
       fonts:
         - asset: fonts/Rozha_One/RozhaOne.ttf
+
+    - family: Lora
+      fonts:
+        - asset: fonts\Lora\Lora-VariableFont_wght.ttf
+
+    - family: Bebas_Neue
+      fonts: 
+        - asset: fonts\Bebas_Neue\BebasNeue-Regular.ttf
+
+    - family: Newsreader
+      fonts: 
+        - asset: fonts\Newsreader\Newsreader-VariableFont_opsz,wght.ttf
+
+

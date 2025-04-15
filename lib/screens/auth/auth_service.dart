@@ -98,6 +98,14 @@ class AuthService {
     );
   }
 
+  Future SignOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
   //************************************************************** */
 
   Future<CustomUser?> signUpWithEmailAndPassword(
@@ -146,17 +154,6 @@ class AuthService {
     }
   }
 
-  //Sign Out
-  // ignore: non_constant_identifier_names
-  Future SignOut() async {
-    try {
-      return await _auth.signOut();
-    } catch (e) {
-      print(e.toString());
-      return null;
-    }
-  }
-
   //Get current user
   User? getCurrentUser() {
     return _auth.currentUser;
@@ -172,7 +169,8 @@ class AuthService {
       final usersRef = FirebaseFirestore.instance.collection('users');
 
       // Query for existing username
-      final querySnapshot = await usersRef.where('name', isEqualTo: name).get();
+      final querySnapshot =
+          await usersRef.where('username', isEqualTo: user).get();
 
       if (querySnapshot.docs.isNotEmpty) {
         return 'This username is already taken';
@@ -239,9 +237,9 @@ class AuthService {
 
   Future<void> verifyPhoneNumber(
     String phoneNumber,
-    Function(String) onCodeSent,
-    Function(String) onVerificationCompleted,
-    Function(String) onVerificationFailed,
+    void Function(String verificationId) onCodeSent,
+    void Function(String successMessage) onVerificationCompleted,
+    void Function(String errorMessage) onVerificationFailed,
   ) async {
     await _auth.verifyPhoneNumber(
       phoneNumber: phoneNumber,
@@ -259,6 +257,9 @@ class AuthService {
         onCodeSent(verificationId);
       },
       codeAutoRetrievalTimeout: (String verificationId) {
+        onVerificationFailed(
+          "Auto-retrieval timed out. Please enter the code manually.",
+        );
         // Auto-retrieval timeout
       },
     );

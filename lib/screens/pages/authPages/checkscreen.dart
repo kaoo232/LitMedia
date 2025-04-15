@@ -15,10 +15,13 @@ class Checkscreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: 447,
-            width: 447,
-            decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage("images/logo.png")),
+            height: MediaQuery.of(context).size.height * 0.35,
+            alignment: Alignment.center,
+            child: Image.asset(
+              'images/logo.png',
+              height: 150, // Set a specific height for the image
+              width: 150, // Set a specific width for the image
+              fit: BoxFit.contain,
             ),
           ),
           Container(
